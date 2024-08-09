@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Threads = () => {
   const [threads, setThreads] = useState([]);
@@ -12,7 +13,6 @@ export const Threads = () => {
 
   return (
     <>
-      {console.log(threads)}
       <header>
         <h1>掲示板アプリ</h1>
       </header>
@@ -21,10 +21,10 @@ export const Threads = () => {
         <ul>
           {threads.map((thread) => {
             return (
-              <li>
-                {thread.title}
+              <li key={thread.id}>
+                <Link to={`/threads/${thread.id}`}>{thread.title}</Link>
               </li>)
-              })}
+          })}
         </ul>
       </div>
     </>
