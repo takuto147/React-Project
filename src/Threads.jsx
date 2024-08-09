@@ -12,6 +12,7 @@ export const Threads = () => {
 
   return (
     <>
+      {console.log(threads)}
       <header>
         <h1>掲示板アプリ</h1>
       </header>
